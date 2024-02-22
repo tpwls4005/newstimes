@@ -49,3 +49,8 @@ const render = () => {
 
   document.getElementById("news-board").innerHTML = resultHTML;
 };
+
+getLatesNews();
+
+
+
