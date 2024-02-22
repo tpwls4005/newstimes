@@ -12,6 +12,34 @@
 
 </head>
 <body>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">Sport</a>
+  <a href="#">Tech</a>
+  <a href="#">World</a>
+  <a href="#">Finance</a>
+  <a href="#">Politics</a>
+  <a href="#">Business</a>
+  <a href="#">Economics</a>
+  <a href="#">Entertainment</a>
+  <a href="#">Beauty</a>
+  <a href="#">Travel</a>
+  <a href="#">Music</a>
+  <a href="#">Food</a>
+  <a href="#">Gaming</a>
+  <a href="#">Energy</a>
+</div>
+<!-- Use any element to open the sidenav -->
+<span onclick="openNav()"><i class="fa-solid fa-bars"></i></span>
+<i class="fas fa-search icon-button" onclick="openSearchBox()"></i>
+<span id="input-area">
+                    <input type="text" id="search-input" placeholder="search" />
+                    <button class="search-button" onclick="searchNews()">Go</button>
+                </span>
+
+
+</div>
 <section class="container">
   <section>
     <div class="head-line">
@@ -37,9 +65,10 @@
       <button>Gaming</button>
       <button>Energy</button>
     </div>
+
   </section>
 
-  <section id ="news-board">
+  <section id="news-board">
     <div class="row news">
       <div class="col-lg-4">
         <img class="news-img-size"

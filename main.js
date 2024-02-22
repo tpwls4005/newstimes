@@ -49,6 +49,24 @@ const render = () => {
 
   document.getElementById("news-board").innerHTML = resultHTML;
 };
+/* Set the width of the side navigation to 250px */
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+
+const openSearchBox = () => {
+  let inputArea = document.getElementById("input-area");
+  if (inputArea.style.display === "inline") {
+    inputArea.style.display = "none";
+  } else {
+    inputArea.style.display = "inline";
+  }
+};
 
 getLatesNews();
 
