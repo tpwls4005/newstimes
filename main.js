@@ -18,13 +18,34 @@ const getLatesNews = async()=> {
 };
 
 const render = () => {
-  const newsHTML = ``;
+  let resultHTML = articles
+  .map((news) => {
+    return `<div class="news row">
+        <div class="col-lg-4">
+            <img class="news-img"
+                src="${
+        news.urlToImage ||
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqEWgS0uxxEYJ0PsOb2OgwyWvC0Gjp8NUdPw&usqp=CAU"
+    }" />
+        </div>
+        <div class="col-lg-8">
+            <a class="title" target="_blank" href="${news.url}">${
+        news.title
+    }</a>
+            <p>${
+        news.description == null || news.description == ""
+            ? "내용없음"
+            : news.description.length > 200
+                ? news.description.substring(0, 200) + "..."
+                : news.description
+    }</p>
+            <div>${news.source.name || "no source"}  ${moment(
+        news.publishedAt
+    ).fromNow()}</div>
+        </div>
+    </div>`;
+  })
+  .join("");
 
-  newsHTML=newsList.map(new=>``)
-
-  document.getElementById("news-board").innerHTML = newsHTML;
-}
-getLatesNews();
-
-
-/* https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY} */
+  document.getElementById("news-board").innerHTML = resultHTML;
+};
