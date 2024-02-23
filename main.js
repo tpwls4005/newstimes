@@ -24,8 +24,8 @@ const getLatesNews = async () => {
 const getNewsByCategory = async(event) => {
   const category = event.target.textContent.toLowerCase();
   console.log("category");
-  const url = new URL(url3)(
-      `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${API_KEY}`
+  const url = new URL(
+      `https://rococo-croissant-3ff41d.netlify.app/top-headlines?category=${category}`
   );
   const response = await fetch(url);
   const data = await response.json();
@@ -37,8 +37,8 @@ const getNewsByCategory = async(event) => {
 const getNewsByKeyword=async ()=>{
   const keyword= document.getElementById("search-input").value;
   console.log("keyword", keyword);
-  const url = new URL(url3)(
-      `https://newsapi.org/v2/top-headlines?country=us&q=${keyword}&apiKey=${API_KEY}`
+  const url = new URL(
+      `https://rococo-croissant-3ff41d.netlify.app/top-headlines?category=${category}`
   );
   const response = await fetch(url);
   const data = await response.json();
