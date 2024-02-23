@@ -38,7 +38,7 @@ const getNewsByKeyword=async ()=>{
   const keyword= document.getElementById("search-input").value;
   console.log("keyword", keyword);
   const url = new URL(
-      `https://rococo-croissant-3ff41d.netlify.app/top-headlines?=${keyword}`
+      `https://rococo-croissant-3ff41d.netlify.app/top-headlines?q=${keyword}`
   );
   const response = await fetch(url);
   const data = await response.json();
