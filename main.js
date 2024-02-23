@@ -9,42 +9,33 @@ menus.forEach(menu =>
     menu.addEventListener("click", (event) => getNewsByCategory(event))
 );
 
-const getLatesNews = async () => {
-  const url = new URL(url3);
-  // console.log("uuu:, url")
-
+ const getNews=async ()=>{
   const response = await fetch(url);
   const data = await response.json();
   newsList = data.articles;
   render();
-  // console.log("aaa", response);
-  // console.log("bbb", data);
-  console.log("ccc", newsList);
+}
+let url = new URL(`https://rococo-croissant-3ff41d.netlify.app/top-headlines`)
+const getLatesNews = async () => {
+url = new URL(url3);
+  getNews();
 };
 const getNewsByCategory = async(event) => {
   const category = event.target.textContent.toLowerCase();
   console.log("category");
-  const url = new URL(
+  url = new URL(
       `https://rococo-croissant-3ff41d.netlify.app/top-headlines?category=${category}`
   );
-  const response = await fetch(url);
-  const data = await response.json();
-  console.log("ccc", data);
-  newsList = data.articles;
-  render()
+  getNews();
 };
 
 const getNewsByKeyword=async ()=>{
   const keyword= document.getElementById("search-input").value;
   console.log("keyword", keyword);
-  const url = new URL(
+  url = new URL(
       `https://rococo-croissant-3ff41d.netlify.app/top-headlines?q=${keyword}`
   );
-  const response = await fetch(url);
-  const data = await response.json();
-  console.log("ccc", data);
-  newsList = data.articles;
-  render()
+  getNews();
 };
 
 const render = () => {
