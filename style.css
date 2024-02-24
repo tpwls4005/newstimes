@@ -87,3 +87,38 @@
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+
+
+
+ .pagination {
+   display: flex;
+   justify-content: center;
+   list-style: none;
+   padding-left: 0;
+ }
+
+.pagination .page-item {
+  margin-right: 0; /* 페이지 아이템 사이의 우측 여백 제거 */
+}
+
+.pagination .page-link {
+  text-decoration: none;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+.pagination .page-link:hover {
+  background-color: #f0f0f0;
+}
+
+.pagination .page-item:first-child .page-link {
+  margin-right: auto; /* 첫 번째 페이지 아이템(Previous)의 우측 여백 설정 */
+}
+
+.pagination .page-item:last-child .page-link {
+  margin-left: auto; /* 마지막 페이지 아이템(Next)의 좌측 여백 설정 */
+}
+
