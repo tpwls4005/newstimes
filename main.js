@@ -167,7 +167,9 @@ const paginationRender = () => {
   const firstPage =
       lastPage - (groupSize - 1) <= 0 ? 1 : lastPage - (groupSize - 1);
 
-  let paginationHTML = "";
+  let paginationHTML = ` <a class="page-link" onclick="moveToPage(${page-1})" href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>`;
 
   for (let i = firstPage; i <= lastPage; i++) {
     paginationHTML += `<li class="page-item" ${
@@ -175,11 +177,15 @@ const paginationRender = () => {
     } onclick = "moveToPage(${i})"><a class="page-link">${i}</a></li>`;
   }
 
-  document.querySelector(".pagination").innerHTML = paginationHTML;
+  paginationHTML += ` <a class="page-link" onclick="moveToPage(${page+1})"  href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>`;
+
+      document.querySelector(".pagination").innerHTML = paginationHTML;
 };
 
 let moveToPage = (pageNum) => {
-  console.log("MMMM", pageNum);
+  console.log("Movetopage", pageNum);
   getNews();
   page = pageNum;
 };
